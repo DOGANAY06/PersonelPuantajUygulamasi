@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>_ConnectionMysqlDataBaseString</Title>
+			<Shortcut>_ConnectionMysqlDataBaseString</Shortcut>
+			<Description>_ConnectionMysqlDataBaseString.</Description>
+			<Author>Hüseyin Demirdöğer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>XXX</ID>
+					<ToolTip>XXXX</ToolTip>
+					<Default>XXXXX</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder
+                .UseMySql("server=localhost;port=3306;user=root;password=;database=XXX")
+                .UseLoggerFactory(LoggerFactory.Create(b => b
+                .AddFilter(level => level >= LogLevel.Information)))
+                .EnableSensitiveDataLogging()
+                .EnableDetailedErrors();
+        }
+
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

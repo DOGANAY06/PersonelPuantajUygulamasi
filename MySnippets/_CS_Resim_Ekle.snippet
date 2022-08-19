@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>_CS_Resim_Ekle</Title>
+			<Shortcut>_CS_Resim_Ekle</Shortcut>
+			<Description>_CS_Resim_Ekle.</Description>
+			<Author>Hüseyin Demirdöğer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>XXX</ID>
+					<ToolTip>XXXX</ToolTip>
+					<Default>XXXXX</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+  <![CDATA[
+
+            if (Request.Files.Count > 0)
+            {
+                Random rnd = new Random();
+                string Dosya = $"{rnd.Next(0, 999999999)}-{DateTime.Now.ToShortDateString()}-{Path.GetFileName(Request.Files[0].FileName)}";
+                string Yol = "~/Files/" + Dosya;
+                Request.Files[0].SaveAs(Server.MapPath(Yol));
+                firma.Resim = "/Files/" + Dosya;
+            }
+            
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

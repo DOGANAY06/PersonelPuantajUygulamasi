@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="İş Takip Uygulaması" />
+    <meta name="author" content="Ay Software" />
+    <title> Puantaj Uygulaması </title>
+    <link rel="icon" href="~/assets/images/aysofticon.ico" type="image/x-icon">
+    <link href="~/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/sidebar-menu.css" rel="stylesheet" />
+    <link href="~/assets/css/app-style.css" rel="stylesheet" />
+</head>
+<body class="bg-theme bg-theme1">
+    <div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner"><div class="loader"></div></div></div></div>
+    <div id="wrapper">
+        <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
+            <div class="brand-logo">
+                <a href="/Departman/Liste/">
+                    <img src="~/assets/images/aysoftlogo.png" class="logo-icon" alt="logo icon">
+                    <h5 class="logo-text"> Ay Software </h5>
+                </a>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-header"> Uygulama  Modüllerimiz </li>
+                <li>
+                    <a href="javaScript:void();" class="waves-effect">
+                        <i class="zmdi zmdi-view-dashboard"></i> <span> Puantaj Sistemi </span><i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="sidebar-submenu">
+                        <li><a href="/Departman/Liste/"><i class="fa fa-building"></i> Departman Yönetimi </a></li>
+                    </ul>
+                    <ul class="sidebar-submenu">
+                        <li><a href="/Personel/Liste/"><i class="fa fa-user-circle"></i> Personel Yönetimi </a></li>
+                    </ul>
+                    <ul class="sidebar-submenu">
+                        <li><a href="/Vardiya/Liste/"><i class="fa fa-clock-o"></i> Vardiya Yönetimi </a></li>
+                    </ul>
+                    <ul class="sidebar-submenu">
+                        <li><a href="/Puantaj/Liste/"><i class="fa fa-file-word-o"></i> Puantaj Yönetimi </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <header class="topbar-nav">
+            <nav class="navbar navbar-expand fixed-top">
+                <ul class="navbar-nav mr-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link toggle-menu" href="javascript:void();">
+                            <i class="icon-menu menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <form class="search-bar">
+                            <input type="text" class="form-control" placeholder="Ara...">
+                            <a href="javascript:void();"><i class="icon-magnifier"></i></a>
+                        </form>
+                    </li>
+                </ul>
+                <ul class="navbar-nav align-items-center right-nav-link">
+                    @*<li class="nav-item dropdown-lg">
+                            <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
+                                <i class="fa fa-envelope-open-o"></i><span class="badge badge-light badge-up">12</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        You have 12 new messages
+                                        <span class="badge badge-light">12</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="javaScript:void();">
+                                            <div class="media">
+                                                <div class="avatar"><img class="align-self-start mr-3" src="https://via.placeholder.com/110x110" alt="user avatar"></div>
+                                                <div class="media-body">
+                                                    <h6 class="mt-0 msg-title">Jhon Deo</h6>
+                                                    <p class="msg-info">Lorem ipsum dolor sit amet...</p>
+                                                    <small>Today, 4:10 PM</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="javaScript:void();">
+                                            <div class="media">
+                                                <div class="avatar"><img class="align-self-start mr-3" src="https://via.placeholder.com/110x110" alt="user avatar"></div>
+                                                <div class="media-body">
+                                                    <h6 class="mt-0 msg-title">Sara Jen</h6>
+                                                    <p class="msg-info">Lorem ipsum dolor sit amet...</p>
+                                                    <small>Yesterday, 8:30 AM</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="javaScript:void();">
+                                            <div class="media">
+                                                <div class="avatar"><img class="align-self-start mr-3" src="https://via.placeholder.com/110x110" alt="user avatar"></div>
+                                                <div class="media-body">
+                                                    <h6 class="mt-0 msg-title">Dannish Josh</h6>
+                                                    <p class="msg-info">Lorem ipsum dolor sit amet...</p>
+                                                    <small>5/11/2018, 2:50 PM</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="javaScript:void();">
+                                            <div class="media">
+                                                <div class="avatar"><img class="align-self-start mr-3" src="https://via.placeholder.com/110x110" alt="user avatar"></div>
+                                                <div class="media-body">
+                                                    <h6 class="mt-0 msg-title">Katrina Mccoy</h6>
+                                                    <p class="msg-info">Lorem ipsum dolor sit amet.</p>
+                                                    <small>1/11/2018, 2:50 PM</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item text-center"><a href="javaScript:void();">See All Messages</a></li>
+                                </ul>
+                            </div>
+                        </li>*@
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
+                            <span class="user-profile"><img src="https://via.placeholder.com/110x110" class="img-circle" alt="user avatar"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="dropdown-item user-details">
+                                <a href="javaScript:void();">
+                                    <div class="media">
+                                        <div class="avatar"><img class="align-self-start mr-3" src="https://via.placeholder.com/110x110" alt="user avatar"></div>
+                                        <div class="media-body">
+                                            <h6 class="mt-2 user-title">Doğan AY</h6>
+                                            <p class="user-subtitle">doganay58068@gmail.com</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item"><i class="icon-envelope mr-2"></i> Inbox</li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item"><i class="icon-wallet mr-2"></i> Account</li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item"><i class="icon-settings mr-2"></i> Setting</li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item"><i class="icon-power mr-2"></i> Logout</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+        <div class="clearfix"></div>
+        <div class="content-wrapper">
+            <div class="container-fluid">
+
+                @RenderBody()
+
+                <div class="overlay toggle-menu"></div>
+            </div>
+        </div><!--End content-wrapper-->
+        <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+        <footer class="footer">
+            <div class="container">
+                <div class="text-center">
+                    Copyright © @DateTime.Now.Year AySoftware Doğan AY
+                </div>
+            </div>
+        </footer>
+    </div><!--End wrapper-->
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/plugins/simplebar/js/simplebar.js"></script>
+    <script src="~/assets/js/sidebar-menu.js"></script>
+    <script src="~/assets/js/app-script.js"></script>
+    <script src="~/assets/plugins/bootstrap-datatable/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets/plugins/bootstrap-datatable/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/assets/plugins/bootstrap-datatable/js/dataTables.buttons.min.js"></script>
+    <script src="~/assets/plugins/bootstrap-datatable/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/assets/plugins/bootstrap-datatable/js/jszip.min.js"></script>
+    <script src="~/assets/plugins/bootstrap-datatable/js/pdfmake.min.js"></script>
+    <script src="~/assets/plugins/bootstrap-datatable/js/vfs_fonts.js"></script>
+    <script src="~/assets/plugins/bootstrap-datatable/js/buttons.html5.min.js"></script>
+    <script src="~/assets/plugins/bootstrap-datatable/js/buttons.print.min.js"></script>
+    <script src="~/assets/plugins/bootstrap-datatable/js/buttons.colVis.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>_ATTB_Firma_Bilgileri</Title>
+			<Shortcut>_ATTB_Firma_Bilgileri</Shortcut>
+			<Description>Firma bilgileri en üstte gelir.</Description>
+			<Author>Hüseyin Demirdöğer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>XXX</ID>
+					<ToolTip>XXXX</ToolTip>
+					<Default>XXXXX</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+      <![CDATA[ATTB.Models.attbcom_attbEntitiesConnectionAdminDB db = new ATTB.Models.attbcom_attbEntitiesConnectionAdminDB();
+    string fid = Request.Cookies["firmaId"].Value;
+    int idddd = int.Parse(fid);
+    ATTB.Models.Firma firma = db.Firma.Where(x => x.id == idddd).FirstOrDefault();]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

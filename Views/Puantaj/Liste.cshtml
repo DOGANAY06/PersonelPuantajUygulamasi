@@ -1,0 +1,136 @@
+﻿@using PersonelPuantajUygulamasi.Models
+
+@{
+    ViewData["Title"] = "Liste";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ApplicationDbContext db = new ApplicationDbContext();
+}
+
+
+<div class="row pt-2 pb-2">
+    <div class="col-sm-9">
+        <h4 class="page-title">
+            @*Başlık*@ Personel Puantaj Bilgisi
+        </h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">
+                @*Detay*@ Bu Sayfada Personellerin Vardiya Ve Puantaj Bilgileri Yel Alır.
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header"><i class="fa fa-list"></i> Puantaj Bilgileri</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example" class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Departman</th>
+                                <th scope="col">Kişi Ad Soyad</th>
+                                <th scope="col">Pazartesi Günü</th>
+                                <th scope="col">Salı Günü</th>
+                                <th scope="col">Çarşamba Günü</th>
+                                <th scope="col">Perşembe Günü</th>
+                                <th scope="col">Cuma Günü</th>
+                                <th scope="col">Cumartesi Günü</th>
+                                <th scope="col">Pazar Günü</th>
+                                <th scope="col">Kaydet Günü</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Personel item in db.Personels.ToList())
+                            {
+
+                                <tr>
+                                    <form action="/Puantaj/Kaydet/" method="post">
+                                    <td scope="row"><input type="text" name="Id" value="@item.Id" style="max-width:25px ; background-color:dodgerblue" readonly /></td>
+
+                                    <td scope="row">@db.Departmans.FirstOrDefault(x => x.Id == item.DepartmanId).Ad</td>
+                                    <td scope="row">@item.Ad @item.Soyad</td>
+                                    <td scope="row">
+                                        <select class="form-control single-select select2-hidden-accessible" name="Pazartesi" required>
+                                            <option>@item.Pazartesi</option>
+                                            @foreach (Vardiya itemm in db.Vardiyas.ToList())
+                                            {
+                                                <option>@itemm.Ad</option>
+                                            }
+                                        </select>
+                                    </td>
+                                    <td scope="row">
+                                        <select class="form-control single-select select2-hidden-accessible" name="Sali" required>
+                                            <option>@item.Sali</option>
+                                            @foreach (Vardiya itemm in db.Vardiyas.ToList())
+                                            {
+                                                <option>@itemm.Ad</option>
+                                            }
+                                        </select>
+                                    </td>
+                                    <td scope="row">
+                                        <select class="form-control single-select select2-hidden-accessible" name="Carsamba" required>
+                                            <option>@item.Carsamba</option>
+                                            @foreach (Vardiya itemm in db.Vardiyas.ToList())
+                                            {
+                                                <option>@itemm.Ad</option>
+                                            }
+                                        </select>
+                                    </td>
+                                    <td scope="row">
+                                        <select class="form-control single-select select2-hidden-accessible" name="Persembe" required>
+                                            <option>@item.Persembe</option>
+                                            @foreach (Vardiya itemm in db.Vardiyas.ToList())
+                                            {
+                                                <option>@itemm.Ad</option>
+                                            }
+                                        </select>
+                                    </td>
+                                    <td scope="row">
+                                        <select class="form-control single-select select2-hidden-accessible" name="Cuma" required>
+                                            <option>@item.Cuma</option>
+                                            @foreach (Vardiya itemm in db.Vardiyas.ToList())
+                                            {
+                                                <option>@itemm.Ad</option>
+                                            }
+                                        </select>
+                                    </td>
+                                    <td scope="row">
+                                        <select class="form-control single-select select2-hidden-accessible" name="Cumartesi" required>
+                                            <option>@item.Cumartesi</option>
+                                            @foreach (Vardiya itemm in db.Vardiyas.ToList())
+                                            {
+                                                <option>@itemm.Ad</option>
+                                            }
+                                        </select>
+                                    </td>
+                                    <td scope="row">
+                                        <select class="form-control single-select select2-hidden-accessible" name="Pazar" required>
+                                            <option>@item.Pazar</option>
+                                            @foreach (Vardiya itemm in db.Vardiyas.ToList())
+                                            {
+                                                <option>@itemm.Ad</option>
+                                            }
+                                        </select>
+                                    </td>
+                                    <td scope="row">
+
+                                        <button type="submit" class="btn btn-sm btn-success btn-lg"><i class="fa fa-save"></i> Kaydet </button>
+
+
+
+                                    </td>
+                                    </form>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
